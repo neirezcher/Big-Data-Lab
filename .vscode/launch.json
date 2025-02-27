@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "hadoop.mapreduce.Main",
+            "projectName": "wordcount",
+        },
+        {
+            "type": "java",
+            "name": "WordCount",
+            "request": "launch",
+            "mainClass": "hadoop.mapreduce.tp1.WordCount",
+            "projectName": "wordcount",
+            "args": ["wordcount/src/main/resources/input/file.txt","wordcount/src/main/resources/output"]
+        }
+        {
+            "type": "java",
+            "name": "SalesJob",
+            "request": "launch",
+            "mainClass": "hadoop.mapreduce.application.SalesJob",
+            "projectName": "wordcount",
+            "args": ["wordcount/src/main/resources/input/sales.txt","wordcount/src/main/resources/output"]
+        }
+    ],
+    
+
+}
