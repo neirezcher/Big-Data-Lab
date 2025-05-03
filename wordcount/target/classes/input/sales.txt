@@ -1,3 +1,0 @@
-2025-02-25 12:45:00 magasinA produit1 100.0 paiement1
-2025-02-25 14:00:00 magasinB produit2 200.0 paiement2
-2025-02-25 15:30:00 magasinA produit3 150.0 paiement3

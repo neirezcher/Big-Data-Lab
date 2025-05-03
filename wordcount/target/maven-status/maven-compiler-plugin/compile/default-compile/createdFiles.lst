@@ -1,7 +1,0 @@
-hadoop\mapreduce\application\SalesJob.class
-hadoop\mapreduce\tp1\IntSumReducer.class
-hadoop\mapreduce\Main.class
-hadoop\mapreduce\application\SalesMapper.class
-hadoop\mapreduce\tp1\TokenizerMapper.class
-hadoop\mapreduce\application\SalesReducer.class
-hadoop\mapreduce\tp1\WordCount.class
