@@ -88,6 +88,31 @@ hbase org.apache.hadoop.hbase.mapreduce.ImportTsv \
   -Dimporttsv.columns="HBASE_ROW_KEY,passenger:survived,passenger:pclass,passenger:name,passenger:sex,passenger:age,ticket:sibsp,ticket:parch,ticket:number,ticket:fare,ticket:cabin,travel:embarked" \
   titanic file:///Hbase-TSV/titanic.tsv
 ```
+### Importing the TSV Data using HDFS
+
+After creating the table, you can import the data from the `titanic.tsv` file using the ImportTsv MapReduce job. To do this, you first need to ensure that the `titanic.tsv` file is uploaded to HDFS.
+
+#### Step 1: Upload the Titanic TSV file to HDFS
+
+Before running the import command, you need to load the `titanic.tsv` file into HDFS. Use the following command to copy the file from your local file system to HDFS:
+
+```bash
+hadoop fs -put /local/path/to/titanic.tsv /user/root/import/titanic.tsv
+```
+Replace /local/path/to/titanic.tsv with the actual path to your local titanic.tsv file. This command will upload the file to the HDFS directory /user/root/import/.
+
+#### Step 2: Import the Data from HDFS into HBase
+
+After uploading the TSV file to HDFS, you can import the data from the titanic.tsv file using the ImportTsv MapReduce job. The command is as follows:
+
+```bash
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv \
+  -Dmapreduce.framework.name=local \
+  -Dimporttsv.separator=$'\t' \
+  -Dimporttsv.columns="HBASE_ROW_KEY,passenger:survived,passenger:pclass,passenger:name,passenger:sex,passenger:age,ticket:sibsp,ticket:parch,ticket:number,ticket:fare,ticket:cabin,travel:embarked" \
+  titanic hdfs:///user/root/import/titanic.tsv
+```
+
 ### Verifying the Data
 
 After importing the data, you can verify the import by running a scan on the `titanic` table in HBase:
